@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Create_Article" enabled="true">
+        <boolProp name="TransactionController.includeTimers">false</boolProp>
+        <boolProp name="TransactionController.parent">false</boolProp>
+      </TransactionController>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">${filepath}/Create Article.csv</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="variableNames">articleKlassId,articleInstanceId</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="UserName" elementType="Argument">
+              <stringProp name="Argument.name">UserName</stringProp>
+              <stringProp name="Argument.value">${__P(userName,)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Password" elementType="Argument">
+              <stringProp name="Argument.name">Password</stringProp>
+              <stringProp name="Argument.value">${__P(passWord,)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id" elementType="Argument">
+              <stringProp name="Argument.name">id</stringProp>
+              <stringProp name="Argument.value">${articleInstanceID}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="configIds" elementType="Argument">
+              <stringProp name="Argument.name">configIds</stringProp>
+              <stringProp name="Argument.value">${configIds}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filesPath" elementType="Argument">
+              <stringProp name="Argument.name">filesPath</stringProp>
+              <stringProp name="Argument.value">C:\Users\roshan.malewar\Desktop\Jmeter\JM Tests</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="lang" elementType="Argument">
+              <stringProp name="Argument.name">lang</stringProp>
+              <stringProp name="Argument.value">en_US</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="hostName" elementType="Argument">
+              <stringProp name="Argument.name">hostName</stringProp>
+              <stringProp name="Argument.value">${__P(hostName,int.contentserv.com)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="port" elementType="Argument">
+              <stringProp name="Argument.name">port</stringProp>
+              <stringProp name="Argument.value">${__P(port,443)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="hostAddress" elementType="Argument">
+              <stringProp name="Argument.name">hostAddress</stringProp>
+              <stringProp name="Argument.value">qa-9</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">${__P(protocol,https)</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="encodingType" elementType="Argument">
+              <stringProp name="Argument.name">encodingType</stringProp>
+              <stringProp name="Argument.value">utf-8</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="noOfUsers" elementType="Argument">
+              <stringProp name="Argument.name">noOfUsers</stringProp>
+              <stringProp name="Argument.value">5</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ramupTime" elementType="Argument">
+              <stringProp name="Argument.name">ramupTime</stringProp>
+              <stringProp name="Argument.value">2</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="loopCount" elementType="Argument">
+              <stringProp name="Argument.name">loopCount</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="dataLanguage" elementType="Argument">
+              <stringProp name="Argument.name">dataLanguage</stringProp>
+              <stringProp name="Argument.value">en_US</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="uiLanguage" elementType="Argument">
+              <stringProp name="Argument.name">uiLanguage</stringProp>
+              <stringProp name="Argument.value">en_US</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="organizationId" elementType="Argument">
+              <stringProp name="Argument.name">organizationId</stringProp>
+              <stringProp name="Argument.value">-1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="physicalCatalogId" elementType="Argument">
+              <stringProp name="Argument.name">physicalCatalogId</stringProp>
+              <stringProp name="Argument.value">pim</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/instancetree/-1?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=e38f53ef-cd0d-4f4e-b0c6-46621bed4cc5&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;attributes&quot;:[],&quot;tags&quot;:[],&quot;allSearch&quot;:&quot;&quot;,&quot;selectedCampaigns&quot;:[],&quot;size&quot;:20,&quot;from&quot;:0,&quot;sortOptions&quot;:[],&quot;getFolders&quot;:true,&quot;getLeaves&quot;:true,&quot;selectedRoles&quot;:[],&quot;selectedTypes&quot;:[],&quot;selectedTaxonomyIds&quot;:[],&quot;parentTaxonomyId&quot;:&quot;&quot;,&quot;clickedTaxonomyId&quot;:&quot;&quot;,&quot;moduleId&quot;:&quot;pimmodule&quot;,&quot;isRed&quot;:true,&quot;isOrange&quot;:true,&quot;isYellow&quot;:true,&quot;isGreen&quot;:true,&quot;logicalCatalogId&quot;:&quot;&quot;,&quot;systemId&quot;:&quot;&quot;,&quot;physicalCatalogId&quot;:&quot;pim&quot;,&quot;organizationId&quot;:&quot;-1&quot;,&quot;endpointId&quot;:&quot;&quot;,&quot;isArchivePortal&quot;:false}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">0.0</stringProp>
+            <stringProp name="ConstantTimer.delay">0</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstances?lang=en_US&amp;sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=8ec5915e-d06a-455d-a62c-b27bfc58bc47&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;parentId&quot;:-1,&quot;type&quot;:&quot;single_article&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">6839.0</stringProp>
+            <stringProp name="ConstantTimer.delay">3419.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 6839 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstances/overviewtab/99d55e2c-061a-4e46-932b-65bd28344ec7?isLoadMore=false&amp;getAll=true&amp;sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=8ec5915e-d06a-455d-a62c-b27bfc58bc47&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;size&quot;:20,&quot;from&quot;:0,&quot;sortField&quot;:&quot;createdOn&quot;,&quot;sortOrder&quot;:&quot;desc&quot;,&quot;templateId&quot;:null,&quot;typeId&quot;:null,&quot;tabId&quot;:null,&quot;tabType&quot;:&quot;com.cs.config.interactor.entity.template.CustomTemplateTab&quot;,&quot;childContextId&quot;:null,&quot;selectedTimeRange&quot;:{&quot;endTime&quot;:null,&quot;startTime&quot;:null}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">189.0</stringProp>
+            <stringProp name="ConstantTimer.delay">94.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 189 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstance/assets?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=70f185e3-3887-4394-883d-3c46af89ca05&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;configIds&quot;:[&quot;${configIds}&quot;]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">79.0</stringProp>
+            <stringProp name="ConstantTimer.delay">39.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 79 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstances/customtab/99d55e2c-061a-4e46-932b-65bd28344ec7?isLoadMore=false&amp;getAll=true&amp;sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=e3b518ea-6fdd-4e50-9a89-2da397c5e4f3&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;size&quot;:20,&quot;from&quot;:0,&quot;sortField&quot;:&quot;createdOn&quot;,&quot;sortOrder&quot;:&quot;desc&quot;,&quot;templateId&quot;:null,&quot;typeId&quot;:null,&quot;tabId&quot;:&quot;property_collection_tab&quot;,&quot;tabType&quot;:&quot;com.cs.config.interactor.entity.template.CustomTemplateTab&quot;,&quot;childContextId&quot;:null,&quot;selectedTimeRange&quot;:{&quot;endTime&quot;:null,&quot;startTime&quot;:null}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">2115.0</stringProp>
+            <stringProp name="ConstantTimer.delay">1057.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 2115 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstance/assets?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=d3ca02af-e090-43e2-b8e1-8b0ec854fb4a&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;9${articleInstanceID}&quot;,&quot;configIds&quot;:[&quot;${configIds}&quot;]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">79.0</stringProp>
+            <stringProp name="ConstantTimer.delay">39.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 79 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/getstatisticsforcontent?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=d3ca02af-e090-43e2-b8e1-8b0ec854fb4a&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;type&quot;:&quot;com.cs.runtime.interactor.entity.ArticleInstance&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">1.0</stringProp>
+            <stringProp name="ConstantTimer.delay">0.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 1 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/getstatisticsforcontent?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=ccaf4e2b-724a-4481-b207-c735545a643f&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;type&quot;:&quot;com.cs.runtime.interactor.entity.ArticleInstance&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">1865.0</stringProp>
+            <stringProp name="ConstantTimer.delay">932.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 1865 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/getconflictsourcesinfo?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=924ec530-2834-4beb-b165-bb3809b4ed22&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;klasses&quot;:[],&quot;taxonomies&quot;:[],&quot;relationships&quot;:[],&quot;contents&quot;:[],&quot;variantContexts&quot;:[],&quot;languages&quot;:[]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">2038.0</stringProp>
+            <stringProp name="ConstantTimer.delay">1019</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 2038 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstances/tabs?isRollback=false&amp;sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=646a208e-42b7-4b1e-ad77-6c18ca77326c&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;baseType&quot;:&quot;com.cs.runtime.interactor.entity.ArticleInstance&quot;,&quot;id&quot;:&quot;99d55e2c-061a-4e46-932b-65bd28344ec7&quot;,&quot;versionId&quot;:0,&quot;versionTimestamp&quot;:1562246605763,&quot;lastModifiedBy&quot;:&quot;admin&quot;,&quot;createdBy&quot;:&quot;admin&quot;,&quot;createdOn&quot;:1562246605757,&quot;lastModified&quot;:1562246605757,&quot;jobId&quot;:null,&quot;componentId&quot;:null,&quot;roles&quot;:[],&quot;types&quot;:[&quot;single_article&quot;],&quot;taxonomyIds&quot;:[],&quot;selectedTaxonomyIds&quot;:[],&quot;organizationId&quot;:&quot;-1&quot;,&quot;physicalCatalogId&quot;:&quot;pim&quot;,&quot;portalId&quot;:null,&quot;logicalCatalogId&quot;:&quot;-1&quot;,&quot;systemId&quot;:null,&quot;endpointId&quot;:&quot;-1&quot;,&quot;originalInstanceId&quot;:&quot;99d55e2c-061a-4e46-932b-65bd28344ec7&quot;,&quot;defaultAssetInstanceId&quot;:null,&quot;branchOf&quot;:&quot;-1&quot;,&quot;versionOf&quot;:null,&quot;ruleViolation&quot;:[],&quot;messages&quot;:{&quot;notificationsCounter&quot;:0,&quot;isRed&quot;:false,&quot;isOrange&quot;:false,&quot;isYellow&quot;:false,&quot;isGreen&quot;:true,&quot;redCount&quot;:0,&quot;orangeCount&quot;:0,&quot;yellowCount&quot;:0,&quot;validityMessage&quot;:null,&quot;shouldViolationCount&quot;:0,&quot;mandatoryViolationCount&quot;:0,&quot;isUniqueViolationCount&quot;:0,&quot;id&quot;:null,&quot;lastModifiedBy&quot;:null,&quot;versionId&quot;:null,&quot;versionTimestamp&quot;:null},&quot;context&quot;:null,&quot;summary&quot;:null,&quot;partnerSources&quot;:[{&quot;organizationId&quot;:&quot;-1&quot;,&quot;physicalCatalogId&quot;:&quot;pim&quot;,&quot;portalId&quot;:&quot;pim&quot;,&quot;logicalCatalogId&quot;:&quot;-1&quot;,&quot;systemId&quot;:null,&quot;endpointId&quot;:&quot;&quot;,&quot;id&quot;:null,&quot;lastModifiedBy&quot;:null,&quot;versionId&quot;:null,&quot;versionTimestamp&quot;:null}],&quot;hiddenSummary&quot;:{&quot;attributeIds&quot;:[],&quot;tagIds&quot;:[],&quot;dependentAttributeIdsMap&quot;:{}},&quot;klassInstanceId&quot;:null,&quot;parentId&quot;:null,&quot;path&quot;:[],&quot;relationships&quot;:[],&quot;variants&quot;:[],&quot;attributeVariants&quot;:[],&quot;languageInstances&quot;:[{&quot;languageCode&quot;:&quot;en_US&quot;,&quot;versionId&quot;:0}],&quot;languageCodes&quot;:[&quot;en_US&quot;],&quot;creationLanguage&quot;:&quot;en_US&quot;,&quot;isEmbedded&quot;:false,&quot;relationshipConflictingValues&quot;:[],&quot;isMerged&quot;:false,&quot;references&quot;:[],&quot;addedAssets&quot;:[],&quot;deletedAssets&quot;:[],&quot;natureReferences&quot;:[],&quot;globalPermission&quot;:{&quot;id&quot;:null,&quot;canRead&quot;:true,&quot;canEdit&quot;:true,&quot;canDelete&quot;:true,&quot;canCreate&quot;:true,&quot;canDownload&quot;:true,&quot;type&quot;:null,&quot;code&quot;:null,&quot;roleId&quot;:null,&quot;entityId&quot;:null,&quot;lastModifiedBy&quot;:null,&quot;versionId&quot;:null,&quot;versionTimestamp&quot;:null},&quot;__NATURE_KLASS_ID&quot;:&quot;single_article&quot;,&quot;isDirty&quot;:true,&quot;addedAttributes&quot;:[],&quot;deletedAttributes&quot;:[],&quot;modifiedAttributes&quot;:[{&quot;baseType&quot;:&quot;com.cs.runtime.interactor.entity.AttributeInstance&quot;,&quot;id&quot;:&quot;3a0e1db3-aed4-4607-9b26-0033d3e479c0&quot;,&quot;versionId&quot;:0,&quot;versionTimestamp&quot;:1562246605761,&quot;lastModifiedBy&quot;:&quot;admin&quot;,&quot;createdBy&quot;:&quot;admin&quot;,&quot;createdOn&quot;:1562246605757,&quot;lastModified&quot;:1562246605761,&quot;jobId&quot;:null,&quot;klassInstanceVersion&quot;:null,&quot;notification&quot;:null,&quot;klassInstanceId&quot;:&quot;99d55e2c-061a-4e46-932b-65bd28344ec7&quot;,&quot;variantInstanceId&quot;:null,&quot;attributeId&quot;:&quot;pid_attribute&quot;,&quot;value&quot;:&quot;PID&quot;,&quot;valueAsNumber&quot;:null,&quot;valueAsHtml&quot;:&quot;&quot;,&quot;valueAsExpression&quot;:null,&quot;isMandatoryViolated&quot;:false,&quot;isShouldViolated&quot;:false,&quot;conflictingValues&quot;:[],&quot;isMatchAndMerge&quot;:false,&quot;originalInstanceId&quot;:null,&quot;duplicateStatus&quot;:[],&quot;isUnique&quot;:-1,&quot;isConflictResolved&quot;:false,&quot;code&quot;:&quot;pid_attribute&quot;,&quot;language&quot;:null,&quot;isValueChanged&quot;:true,&quot;addedTags&quot;:[],&quot;modifiedTags&quot;:[],&quot;deletedTags&quot;:[],&quot;modifiedContext&quot;:null}],&quot;addedTags&quot;:[],&quot;deletedTags&quot;:[],&quot;modifiedTags&quot;:[],&quot;addedRelationships&quot;:[],&quot;deletedRelationships&quot;:[],&quot;modifiedRelationships&quot;:[],&quot;addedNatureRelationships&quot;:[],&quot;deletedNatureRelationships&quot;:[],&quot;modifiedNatureRelationships&quot;:[],&quot;modifiedAssets&quot;:[],&quot;addedLinkedInstances&quot;:[],&quot;deletedLinkedInstances&quot;:[],&quot;getKlassInstanceTreeInfo&quot;:{&quot;attributes&quot;:[],&quot;tags&quot;:[],&quot;allSearch&quot;:&quot;&quot;,&quot;size&quot;:20,&quot;from&quot;:0,&quot;isAttribute&quot;:false,&quot;isNumeric&quot;:false,&quot;selectedRoles&quot;:[],&quot;selectedTypes&quot;:[],&quot;isRed&quot;:false,&quot;isOrange&quot;:false,&quot;isYellow&quot;:false,&quot;isGreen&quot;:false},&quot;tabType&quot;:&quot;com.cs.config.interactor.entity.template.CustomTemplateTab&quot;,&quot;tabId&quot;:&quot;property_collection_tab&quot;,&quot;typeId&quot;:null,&quot;templateId&quot;:null,&quot;isLinked&quot;:true,&quot;isSaveAndPublish&quot;:true}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">7424.0</stringProp>
+            <stringProp name="ConstantTimer.delay">3712</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 7424 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstance/assets?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=646a208e-42b7-4b1e-ad77-6c18ca77326c&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;configIds&quot;:[&quot;${configIds}&quot;]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">1214.0</stringProp>
+            <stringProp name="ConstantTimer.delay">607</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 1214 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/getconflictsourcesinfo?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=5de03564-e433-4ecb-a9be-db485c7b4a31&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;klasses&quot;:[],&quot;taxonomies&quot;:[],&quot;relationships&quot;:[],&quot;contents&quot;:[],&quot;variantContexts&quot;:[],&quot;languages&quot;:[]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">2310.0</stringProp>
+            <stringProp name="ConstantTimer.delay">1155</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 2310 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/getstatisticsforcontent?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=ed96bbc2-8343-4822-b498-81cfa622145d&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;type&quot;:&quot;com.cs.runtime.interactor.entity.ArticleInstance&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">700.0</stringProp>
+            <stringProp name="ConstantTimer.delay">350</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 700 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstances/tabs?isRollback=false&amp;sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=4f5a1f28-9e14-4f34-9cda-6b5ba609edc7&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;baseType&quot;:&quot;com.cs.runtime.interactor.entity.ArticleInstance&quot;,&quot;id&quot;:&quot;99d55e2c-061a-4e46-932b-65bd28344ec7&quot;,&quot;versionId&quot;:1,&quot;versionTimestamp&quot;:1562246619544,&quot;lastModifiedBy&quot;:&quot;admin&quot;,&quot;createdBy&quot;:&quot;admin&quot;,&quot;createdOn&quot;:1562246605757,&quot;lastModified&quot;:1562246619543,&quot;jobId&quot;:null,&quot;componentId&quot;:null,&quot;roles&quot;:[],&quot;types&quot;:[&quot;single_article&quot;],&quot;taxonomyIds&quot;:[],&quot;selectedTaxonomyIds&quot;:[],&quot;organizationId&quot;:&quot;-1&quot;,&quot;physicalCatalogId&quot;:&quot;pim&quot;,&quot;portalId&quot;:null,&quot;logicalCatalogId&quot;:&quot;-1&quot;,&quot;systemId&quot;:null,&quot;endpointId&quot;:&quot;-1&quot;,&quot;originalInstanceId&quot;:&quot;99d55e2c-061a-4e46-932b-65bd28344ec7&quot;,&quot;defaultAssetInstanceId&quot;:null,&quot;branchOf&quot;:&quot;-1&quot;,&quot;versionOf&quot;:null,&quot;ruleViolation&quot;:[],&quot;messages&quot;:{&quot;notificationsCounter&quot;:0,&quot;isRed&quot;:false,&quot;isOrange&quot;:false,&quot;isYellow&quot;:false,&quot;isGreen&quot;:true,&quot;redCount&quot;:0,&quot;orangeCount&quot;:0,&quot;yellowCount&quot;:0,&quot;validityMessage&quot;:null,&quot;shouldViolationCount&quot;:0,&quot;mandatoryViolationCount&quot;:0,&quot;isUniqueViolationCount&quot;:0,&quot;id&quot;:null,&quot;lastModifiedBy&quot;:null,&quot;versionId&quot;:null,&quot;versionTimestamp&quot;:null},&quot;context&quot;:null,&quot;summary&quot;:null,&quot;partnerSources&quot;:[{&quot;organizationId&quot;:&quot;-1&quot;,&quot;physicalCatalogId&quot;:&quot;pim&quot;,&quot;portalId&quot;:&quot;pim&quot;,&quot;logicalCatalogId&quot;:&quot;-1&quot;,&quot;systemId&quot;:null,&quot;endpointId&quot;:&quot;&quot;,&quot;id&quot;:null,&quot;lastModifiedBy&quot;:null,&quot;versionId&quot;:null,&quot;versionTimestamp&quot;:null}],&quot;hiddenSummary&quot;:{&quot;attributeIds&quot;:[],&quot;tagIds&quot;:[],&quot;dependentAttributeIdsMap&quot;:{}},&quot;klassInstanceId&quot;:null,&quot;parentId&quot;:null,&quot;path&quot;:[],&quot;relationships&quot;:[],&quot;variants&quot;:[],&quot;attributeVariants&quot;:[],&quot;languageInstances&quot;:[{&quot;languageCode&quot;:&quot;en_US&quot;,&quot;versionId&quot;:0}],&quot;languageCodes&quot;:[&quot;en_US&quot;],&quot;creationLanguage&quot;:&quot;en_US&quot;,&quot;isEmbedded&quot;:false,&quot;relationshipConflictingValues&quot;:[],&quot;isMerged&quot;:false,&quot;references&quot;:[],&quot;addedAssets&quot;:[],&quot;deletedAssets&quot;:[],&quot;natureReferences&quot;:[],&quot;globalPermission&quot;:{&quot;id&quot;:null,&quot;canRead&quot;:true,&quot;canEdit&quot;:true,&quot;canDelete&quot;:true,&quot;canCreate&quot;:true,&quot;canDownload&quot;:true,&quot;type&quot;:null,&quot;code&quot;:null,&quot;roleId&quot;:null,&quot;entityId&quot;:null,&quot;lastModifiedBy&quot;:null,&quot;versionId&quot;:null,&quot;versionTimestamp&quot;:null},&quot;__NATURE_KLASS_ID&quot;:&quot;single_article&quot;,&quot;isDirty&quot;:true,&quot;addedAttributes&quot;:[],&quot;deletedAttributes&quot;:[],&quot;modifiedAttributes&quot;:[{&quot;baseType&quot;:&quot;com.cs.runtime.interactor.entity.AttributeInstance&quot;,&quot;id&quot;:&quot;e4f89aac-65bf-4f9b-9cef-0434c178b879&quot;,&quot;versionId&quot;:0,&quot;versionTimestamp&quot;:1562246605761,&quot;lastModifiedBy&quot;:&quot;admin&quot;,&quot;createdBy&quot;:&quot;admin&quot;,&quot;createdOn&quot;:1562246605757,&quot;lastModified&quot;:1562246605761,&quot;jobId&quot;:null,&quot;klassInstanceVersion&quot;:null,&quot;notification&quot;:null,&quot;klassInstanceId&quot;:&quot;99d55e2c-061a-4e46-932b-65bd28344ec7&quot;,&quot;variantInstanceId&quot;:null,&quot;attributeId&quot;:&quot;gtin_attribute&quot;,&quot;value&quot;:&quot;7894&quot;,&quot;valueAsNumber&quot;:null,&quot;valueAsHtml&quot;:&quot;&quot;,&quot;valueAsExpression&quot;:null,&quot;isMandatoryViolated&quot;:false,&quot;isShouldViolated&quot;:false,&quot;conflictingValues&quot;:[],&quot;isMatchAndMerge&quot;:false,&quot;originalInstanceId&quot;:null,&quot;duplicateStatus&quot;:[],&quot;isUnique&quot;:-1,&quot;isConflictResolved&quot;:false,&quot;code&quot;:&quot;gtin_attribute&quot;,&quot;language&quot;:null,&quot;isValueChanged&quot;:true,&quot;addedTags&quot;:[],&quot;modifiedTags&quot;:[],&quot;deletedTags&quot;:[],&quot;modifiedContext&quot;:null}],&quot;addedTags&quot;:[],&quot;deletedTags&quot;:[],&quot;modifiedTags&quot;:[],&quot;addedRelationships&quot;:[],&quot;deletedRelationships&quot;:[],&quot;modifiedRelationships&quot;:[],&quot;addedNatureRelationships&quot;:[],&quot;deletedNatureRelationships&quot;:[],&quot;modifiedNatureRelationships&quot;:[],&quot;modifiedAssets&quot;:[],&quot;addedLinkedInstances&quot;:[],&quot;deletedLinkedInstances&quot;:[],&quot;getKlassInstanceTreeInfo&quot;:{&quot;attributes&quot;:[],&quot;tags&quot;:[],&quot;allSearch&quot;:&quot;&quot;,&quot;size&quot;:20,&quot;from&quot;:0,&quot;isAttribute&quot;:false,&quot;isNumeric&quot;:false,&quot;selectedRoles&quot;:[],&quot;selectedTypes&quot;:[],&quot;isRed&quot;:false,&quot;isOrange&quot;:false,&quot;isYellow&quot;:false,&quot;isGreen&quot;:false},&quot;tabType&quot;:&quot;com.cs.config.interactor.entity.template.CustomTemplateTab&quot;,&quot;tabId&quot;:&quot;property_collection_tab&quot;,&quot;typeId&quot;:null,&quot;templateId&quot;:null,&quot;isLinked&quot;:true,&quot;isSaveAndPublish&quot;:true}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">4865.0</stringProp>
+            <stringProp name="ConstantTimer.delay">2432.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 4865 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/klassinstance/assets?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=4f5a1f28-9e14-4f34-9cda-6b5ba609edc7&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;configIds&quot;:[&quot;${configIds}&quot;]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">1164.0</stringProp>
+            <stringProp name="ConstantTimer.delay">582</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 1164 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://int.contentserv.com/qa-9/runtime/getstatisticsforcontent?sessionId=4ac0e866-2104-4d59-aa7f-56745b5359d6&amp;requestId=bc204243-6a45-4cad-ab1b-e066d941a3cd&amp;lang=en_US&amp;organizationId=-1&amp;physicalCatalogId=pim&amp;portalId=pim&amp;endpointId=&amp;endpointType=&amp;dataLanguage=en_US" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;id&quot;:&quot;${articleInstanceID}&quot;,&quot;type&quot;:&quot;com.cs.runtime.interactor.entity.ArticleInstance&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${hostName}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/${hostAddress}/runtime/klassinstance/&amp;sessionId=&amp;requestId=&amp;lang=${lang}&amp;organizationId=${organizationId}&amp;physicalCatalogId=${physicalCatalogId}&amp;portalId=${portalId}&amp;endpointId=&amp;endpointType=&amp;dataLanguage=${dataLanguage}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://int.contentserv.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="RandomTimer.range">3007.0</stringProp>
+            <stringProp name="ConstantTimer.delay">1503.5</stringProp>
+            <stringProp name="TestPlan.comments">Recorded time was 3007 milliseconds</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
