@@ -84,8 +84,25 @@
             <stringProp name="Argument.value">-1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="filesPath" elementType="Argument">
+            <stringProp name="Argument.name">filesPath</stringProp>
+            <stringProp name="Argument.value">C:\Users\roshan.malewar\Desktop\Jmeter\JM Tests</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="filename">${filepath}/Login.csv</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="variableNames"></stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
       <hashTree/>
       <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login" enabled="true">
         <boolProp name="TransactionController.includeTimers">false</boolProp>
